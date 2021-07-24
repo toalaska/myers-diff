@@ -1,9 +1,392 @@
-D
-A
-B
-C
-D
-D
-A
-B
-C
+package com.ylzinfo.brt.privilege.entity;
+
+import java.time.LocalDateTime;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+/**
+ * <p>
+ *
+ * </p>
+ *
+ * @author ${author}
+ * @since 2021-07-14
+ */
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@ApiModel(value = "AppealInfo对象", description = "")
+@TableName("appeal_info2")
+public class AppealInfo implements Serializable {
+    @ApiModelProperty("月份 yyyy-MM")
+    @TableField("appeal_month")
+    private String appealMonth;
+
+    @ApiModelProperty("序号")
+    @TableField("id")
+    private String id;
+
+    @ApiModelProperty("交易流水号")
+    @TableField("trace_id")
+    private String traceId;
+
+    @ApiModelProperty("单据编码")
+    @TableField("document_id")
+    private String documentId;
+
+    @ApiModelProperty("意见书编码")
+    @TableId(value = "audit_id",type=IdType.INPUT)
+    private String auditId;
+
+    @ApiModelProperty("统筹区编码")
+    @TableField("area_id")
+    private String areaId;
+
+    @ApiModelProperty("统筹区名称")
+    @TableField("area_name")
+    private String areaName;
+
+    @ApiModelProperty("参保类型")
+    @TableField("insu_type")
+    private String insuType;
+
+    @ApiModelProperty("项目编码")
+    @TableField("pro_id")
+    private String proId;
+
+    @ApiModelProperty("项目名称")
+    @TableField("pro_name")
+    private String proName;
+
+    @ApiModelProperty("医保项目名称")
+    @TableField("hill_name")
+    private String hillName;
+
+    @ApiModelProperty("医保内金额")
+    @TableField("hill_money")
+    private String hillMoney;
+
+    @ApiModelProperty("规则名称")
+    @TableField("rule_name")
+    private String ruleName;
+
+    @ApiModelProperty("扣款金额")
+    @TableField("sub_money")
+    private String subMoney;
+
+    @ApiModelProperty("扣款原因")
+    @TableField("sub_reason")
+    private String subReason;
+
+    @ApiModelProperty("责任医生")
+    @TableField("duty_doctor")
+    private String dutyDoctor;
+
+    @ApiModelProperty("科室编码")
+    @TableField("department_id")
+    private String departmentId;
+
+    @ApiModelProperty("科室名称")
+    @TableField("department_name")
+    private String departmentName;
+
+    @ApiModelProperty("入院日期")
+    @TableField("inpa_date")
+    private String inpaDate;
+
+    @ApiModelProperty("出院日期")
+    @TableField("oupa_date")
+    private String oupaDate;
+
+    @ApiModelProperty("费用日期")
+    @TableField("cost_date")
+    private String costDate;
+
+    @ApiModelProperty("住院号")
+    @TableField("patient_no")
+    private String patientNo;
+
+    @ApiModelProperty("就医方式")
+    @TableField("patient_method")
+    private String patientMethod;
+
+    @ApiModelProperty("结算日期")
+    @TableField("settle_date")
+    private String settleDate;
+
+    @ApiModelProperty("个人编号")
+    @TableField("person_id")
+    private String personId;
+
+    @ApiModelProperty("参保人姓名")
+    @TableField("person_name")
+    private String personName;
+
+    @ApiModelProperty("医保卡号")
+    @TableField("medical_card")
+    private String medicalCard;
+
+    @ApiModelProperty("版本号")
+    @TableField("edition_id")
+    private String editionId;
+
+    @ApiModelProperty("退回原因")
+    @TableField("feedback_reason")
+    private String feedbackReason;
+
+    @ApiModelProperty("反馈申诉")
+    @TableField("appeal_reason")
+    private String appealReason;
+
+    @ApiModelProperty("材料状态 4=退回 3=通过 2=已填写 1=已下发")
+    @TableField("appeal_status")
+    private String appealStatus;
+
+    @ApiModelProperty("填写人")
+    @TableField("audit_person")
+    private String auditPerson;
+
+    @ApiModelProperty("创建时间")
+    @TableField("create_date")
+    private Date createDate;
+
+    @ApiModelProperty("医生 1 /医保科 2/泰安 主单扣款 3")
+    @TableField("is_doctor")
+    private String isDoctor;
+
+    @ApiModelProperty("截至日期")
+    @TableField("appeal_month_end_date")
+    private String appealMonthEndDate;
+
+    @ApiModelProperty("操作人类型")
+    @TableField("operator_type")
+    private String operatorType;
+
+    @ApiModelProperty("导入险种类型")
+    @TableField("import_insurance_type")
+    private String importInsuranceType;
+
+    @ApiModelProperty("申诉终审类型")
+    @TableField("appeal_action_type")
+    private String appealActionType;
+
+    @ApiModelProperty("导入模板excel实体类名称")
+    @TableField("excel_entity_class")
+    private String excelEntityClass;
+
+    @ApiModelProperty("是否同步")
+    @TableField("is_sync")
+    private String isSync;
+
+    @ApiModelProperty("申诉状态")
+    @TableField("second_appeal_status")
+    private String secondAppealStatus;
+
+    @ApiModelProperty("申诉次数")
+    @TableField("appeal_count")
+    private String appealCount;
+
+    @ApiModelProperty("单据流水号")
+    @TableField("document_trace_id")
+    private String documentTraceId;
+
+    @ApiModelProperty("就诊流水号")
+    @TableField("jz_trace_id")
+    private String jzTraceId;
+
+    @ApiModelProperty("医院就诊号")
+    @TableField("yy_trace_id")
+    private String yyTraceId;
+
+    @ApiModelProperty("性别")
+    @TableField("gend")
+    private String gend;
+
+    @ApiModelProperty("就诊日期")
+    @TableField("inpatient_date")
+    private String inpatientDate;
+
+    @ApiModelProperty("病情")
+    @TableField("inpatient_info")
+    private String inpatientInfo;
+
+    @ApiModelProperty("医院项目名称")
+    @TableField("hospital_project_name")
+    private String hospitalProjectName;
+
+    @ApiModelProperty("疑点类型")
+    @TableField("doubt_type")
+    private String doubtType;
+
+    @ApiModelProperty("审核备注")
+    @TableField("second_audit_info")
+    private String secondAuditInfo;
+
+    @ApiModelProperty("医师姓名")
+    @TableField("doctor_name")
+    private String doctorName;
+
+    @ApiModelProperty("补款金额")
+    @TableField("add_money")
+    private String addMoney;
+
+    @ApiModelProperty("数量")
+    @TableField("count")
+    private String count;
+
+    @ApiModelProperty("单价")
+    @TableField("price")
+    private String price;
+
+    @ApiModelProperty("金额")
+    @TableField("money")
+    private String money;
+
+    @ApiModelProperty("自付比例")
+    @TableField("self_cost_percent")
+    private String selfCostPercent;
+
+    @ApiModelProperty("医保费用")
+    @TableField("yb_cost")
+    private String ybCost;
+
+    @ApiModelProperty("扣款倍数")
+    @TableField("sub_cost_multiple")
+    private String subCostMultiple;
+
+    @ApiModelProperty("审核状态")
+    @TableField("second_audit_status")
+    private String secondAuditStatus;
+
+    @ApiModelProperty("经办人")
+    @TableField("middle_person")
+    private String middlePerson;
+
+    @ApiModelProperty("经办时间")
+    @TableField("middle_date")
+    private String middleDate;
+
+    @ApiModelProperty("审批人")
+    @TableField("second_audit_person")
+    private String secondAuditPerson;
+
+    @ApiModelProperty("审批时间")
+    @TableField("audit_date")
+    private String auditDate;
+
+    @ApiModelProperty("社保卡号")
+    @TableField("social_card_num")
+    private String socialCardNum;
+
+    @ApiModelProperty("社会保障号码")
+    @TableField("social_ensure_num")
+    private String socialEnsureNum;
+
+    @ApiModelProperty("人员编号")
+    @TableField("person_num")
+    private String personNum;
+
+    @ApiModelProperty("医疗类别")
+    @TableField("medical_type")
+    private String medicalType;
+
+    @ApiModelProperty("违规类型")
+    @TableField("violate_type")
+    private String violateType;
+
+    @ApiModelProperty("申诉批次号")
+    @TableField("appeal_batch")
+    private String appealBatch;
+
+    @ApiModelProperty("险种")
+    @TableField("second_insu_type")
+    private String secondInsuType;
+
+    @ApiModelProperty("审批意见")
+    @TableField("audit_advice")
+    private String auditAdvice;
+
+    @ApiModelProperty("规格")
+    @TableField("specification")
+    private String specification;
+
+    @ApiModelProperty("计价单位")
+    @TableField("price_unit")
+    private String priceUnit;
+
+    @ApiModelProperty("医疗费总额合计")
+    @TableField("medical_total_count")
+    private String medicalTotalCount;
+
+    @ApiModelProperty("药品类别")
+    @TableField("medicine_type")
+    private String medicineType;
+
+    @ApiModelProperty("通用名")
+    @TableField("general_name")
+    private String generalName;
+
+    @ApiModelProperty("药品限价")
+    @TableField("limit_price")
+    private String limitPrice;
+
+    @ApiModelProperty("发票项目类别")
+    @TableField("bill_project_type")
+    private String billProjectType;
+
+    @ApiModelProperty("单次用量")
+    @TableField("single_use_count")
+    private String singleUseCount;
+
+    @ApiModelProperty("申诉提交时间")
+    @TableField("appeal_submit_time")
+    private String appealSubmitTime;
+
+    @ApiModelProperty("医保类型")
+    @TableField("yb_type")
+    private String ybType;
+
+    @ApiModelProperty("挂号号")
+    @TableField("register_num")
+    private String registerNum;
+
+    @ApiModelProperty("主管医师")
+    @TableField("primary_doctor")
+    private String primaryDoctor;
+
+    @ApiModelProperty("医疗组")
+    @TableField("medical_tips")
+    private String medicalTips;
+
+    @ApiModelProperty("执行科室")
+    @TableField("execute_department")
+    private String executeDepartment;
+
+    @ApiModelProperty("扣款人")
+    @TableField("sub_money_person")
+    private String subMoneyPerson;
+
+    @ApiModelProperty("泰安 1 / 长乐 2")
+    @TableField("info_type")
+    private String infoType;
+
+    @ApiModelProperty("医疗类别")
+    @TableField("medical_category")
+    private String medicalCategory;
+
+    @ApiModelProperty("开单医生")
+    @TableField("draw_bill_doctor")
+    private String drawBillDoctor;
+}

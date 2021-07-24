@@ -36,6 +36,7 @@ public class Main {
     }
 
     Difference difference = new Difference(oldString, newString);
-    System.out.println(difference.getDiffString());
+    final String diff = difference.merge();
+    System.out.println(diff);
   }
 }
